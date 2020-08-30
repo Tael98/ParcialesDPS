@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<nav class="navbar navbar-light" style="background-color: #0064aa;">
+  <h1 style="text-align: left; vertical-align:text-top; color:white;">Parcial 1 - Diseño y Programación de Software Multiplataforma</h1>
+    <a class="navbar-brand" href="#">
+   <img src='https://lh3.googleusercontent.com/proxy/sU6YE8uRnpMevpXToRnSkn9x77svzUkE3bge-Fc2YFLwWCfGKDI_C5wYO4NrbIAXuE01IUFKjQ7h6ZiRQBfPXyZQZ9HZBj9IcZInqzK0Zgm6znZJAPf0EdmHhqcfN_4' width="115" height="115" class="d-inline-block align-top" alt="">  </a></nav>
+
+
+   <div class="row" >
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5" style="background-color: #0064aa">
+        <h2 style="text-align: center; vertical-align:text-top; color:white;">Realizar registro de compras</h2>
+        <div class="card-body">
+          <div class="container">
+
+<div class="form-group" style="color: white;">
+
+  <label for="name">Nombre:</label>
+  <input type="text" [(ngModel)]="nombre" class="form-control" id="name" placeholder="Nombre del cliente">
+  <br>
+  <label for="dui">DUI:</label>
+  <input type="text" [(ngModel)]="dui" class="form-control" id="dui" placeholder="DUI del cliente">
+  <br>
+  <label for="idproducto">Producto</label>
+    <select class="form-control" [(ngModel)]="producto" id="idproducto">
+      <option>p1</option>
+      <option>p2</option>
+      <option>p3</option>
+      <option>p4</option>
+      <option>p5</option>
+    </select>
+   <br>
+   <label for="desc">Descripción</label>
+    <textarea class="form-control" [(ngModel)]="descripcion" id="desc" placeholder="Descripción del producto" rows="3"></textarea>
+    <br>
+  <label for="pre">Precio:</label>
+  <input type="number" class="form-control" [(ngModel)]="precio" id="pre" step = 0.01 placeholder="Precio del producto">
+  <br>
+  <button type="button" (click)="capturar()" class="btn btn-dark">Guardar</button>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="card card-signin my-5" style="background-color: #0064aa">
+  <h2 style="text-align: center; vertical-align:text-top; color:white;">Historial</h2>
+  <div class="card-body">
+    <div class = "table-responsive" >
+      <table class="table-responsive" id = "content" style = "background: #0064aa; color: white; border-collapse: separate;
+      border-spacing: 15px 5px;">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Dui</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Descuento aplicado</th>
+        <th scope="col">Monto total</th>
+      </tr>
+      <tr *ngFor="let tcompra of registro">
+        <td>{{tcompra.nombre}}</td>
+        <td>{{tcompra.dui}}</td>
+        <td>{{tcompra.producto}}</td>
+        <td>{{tcompra.descripcion}}</td>
+        <td>{{tcompra.precio}}</td>
+        <td>{{tcompra.descuento}}</td>
+        <td>{{tcompra.monto}}</td>
+
+        </tr>
+    
+    </table>
+        </div>
+</div>
+</div>
+
+</div>
+</div>
